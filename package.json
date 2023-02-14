@@ -1,11 +1,18 @@
 {
-    "name": "LosPecDailyDiscordBot",
-    "version": "1.0.0",
-    "description": "Simple fanbot to post the Lospec daily",
-    "main": "bot.js",
-    "author": "NBGHemmer",
-    "dependencies": {
-        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-        "winston": "^3.8.2"
-    }
+  "name": "LospecDailiesBot",
+  "version": "1.0.0",
+  "description": "a simple bot that posts de lospec daily everyday",
+  "main": "bot.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "author": "NBGHemmer",
+  "license": "",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
+  }
 }
