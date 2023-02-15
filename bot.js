@@ -34,14 +34,14 @@ for (const file of commandFiles) {
 
 //run the lospec daily cron job
 client.once(Events.ClientReady, c => {
+    const guild = process.env.GUILD_ID
+    const channel = process.env.CHANNEL_ID
     console.log(`Ready! Logged in as ${c.user.tag}`);
-
 
     //for now I'll set it to 8 o'clock in the morning amsterdam time
     let scheduledMessage = new cron.CronJob('0 8 * * *', () => {
 
-        const guild = process.env.GUILD_ID
-        const channel = process.env.CHANNEL_ID
+
 
         //get the info from lospec:
         //the daily tag
@@ -52,8 +52,8 @@ client.once(Events.ClientReady, c => {
             dailypallette,
             paletteGPLfile,
             palettePNGfile) => {
-                LRH.sendLospecDaily(client, dailytag, dailypallette, paletteGPLfile, palettePNGfile);
-            });
+            LRH.sendLospecDaily(client, guild, channel, dailytag, dailypallette, paletteGPLfile, palettePNGfile);
+        });
     });
 
     // When you want to start it, use:
